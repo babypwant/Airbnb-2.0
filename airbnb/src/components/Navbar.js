@@ -17,13 +17,13 @@ const Navbar = () => {
         <div className='flex justify-center items-center relative shadow-sm shadow-gray-400 border rounded-full'>
             <input type='search' 
             placeholder='' className='py-2.5 w-[20rem] rounded-full outline-0'/>
-            <div className='absolute'>
-                <button>Place</button>
+            <div className='flex justify-between absolute w-full pr-16 pl-6 font-semibold text-gray-500'>
+                <button className=''>Place</button>
                 <button>Time</button>
                 <button>Group Size</button>
             </div>
-            <div className='bg-[#ff5a60]'>
-                    <FiSearch />
+            <div className='bg-[#ff5a60] p-2 rounded-full mr-2'>
+                    <FiSearch className='text-white' />
             </div>
         </div>
         {/* Right - Login/Sign Up */}
@@ -32,7 +32,7 @@ const Navbar = () => {
             <BiWorld />
         <div className='flex items-center'>
             <FiMenu />
-            <FaUserCircle />
+            <FaUserCircle className=''/>
         </div> 
         </div>   
         </div>
