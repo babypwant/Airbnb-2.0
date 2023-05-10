@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar';
-
+import Filters from './components/Filters';
 
 function App() {
   return (
@@ -7,6 +7,7 @@ function App() {
       {/* Navbar */}
       <Navbar />
       {/* Filters */}
+      <Filters />
       {/* Rentals */}
       {/* Footer */}
 
