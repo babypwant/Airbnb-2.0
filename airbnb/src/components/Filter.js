@@ -9,6 +9,7 @@ const Filter = ({title, icon}) => {
       hover:font-bold
       duration-200 ease-out
       py-1 px-4 rounded-full mx-2
+      sm:px-4 rourounded-full text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]
       '>
         {icon}
         <p className='text-center text-sm text-black px-1'>{title}</p>
