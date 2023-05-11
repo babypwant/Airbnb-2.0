@@ -5,17 +5,17 @@ import {MdHouseboat,MdBedroomChild} from 'react-icons/md'
 import Filter from './Filter'
 
 const Filters = () => {
+    // remake the icons into an array instead of array o objects.
     const icons = [
-        // {title:"New",icon:<FaKey/>},
-        // {title:"Top of the world",icon:<FaMountain/>},
-        // {title:"Play",icon:<GiBowlingStrike/>},
-        // {title:"Japanese Inn",icon:<MdHouseboat/>},
-        // {title:"Private Rooms",icon:<MdBedroomChild/>},
-        // {title:"Boats",icon:<GiSailboat/>},
+        {title:"New",icon:<FaKey/> ,key:1},
+        {title:"Top of the world",icon:<FaMountain/>,key:1},
+        {title:"Play",icon:<GiBowlingStrike/>,key:2},
+        {title:"Japanese Inn",icon:<MdHouseboat/>,key:3},
+        {title:"Private Rooms",icon:<MdBedroomChild/>,key:4},
+        {title:"Boats",icon:<GiSailboat/>,key:5},
     ];
   return (
-    <div className="sm:mx-6 md:mx-10 lg:mx-12"
-    >
+    <div className="sm:mx-6 md:mx-10 lg:mx-12">
         <div className='flex justify-center'>
             {icons.map((obj) => (
                 <Filter title={obj.title} icon={obj.icon} />
