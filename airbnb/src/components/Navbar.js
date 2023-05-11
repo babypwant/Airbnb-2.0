@@ -6,7 +6,7 @@ import { FaUserCircle } from 'react-icons/fa';
 
 const Navbar = () => {
     return (
-        <div className='border-b'>
+        <div className='border-b sticky top-0 bg-white/[95%]'>
             <div className='flex 
                     justify-between
                     items-center sm:mx-6 md:mx-10 lg:mx-12'> 

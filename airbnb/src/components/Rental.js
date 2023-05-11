@@ -10,7 +10,8 @@ const Rental = ({title, image, price, id, rating}) => {
             <div className='grad absolute w-full h-full rounded-b-[1.3rem]'></div>
             <div className='flex'>
                 {/* background */}
-                <img src={image} alt='view of house' className='object-cover rounded-[1.3rem]'/>
+                <img src={image} alt='view of house' className='object-cover rounded-[1.3rem]
+                 '/>
                 <div className='absolute text-white font-bold bottom-6 left-6 text-[22px]
                 '>
                     {/* title */}

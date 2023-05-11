@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Filters from './components/Filters';
 import Rentals from './components/Rentals';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Rentals />
       </div>
       {/* Footer */}
-
+      <Footer />
 
     </div>
   );
