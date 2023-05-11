@@ -15,7 +15,7 @@ const Filters = () => {
         {title:"Boats",icon:<GiSailboat/>,key:5},
     ];
   return (
-    <div className="sm:mx-6 md:mx-10 lg:mx-12
+    <div className="
     py-8">
         <div className='flex justify-center'>
             {icons.map((obj) => (

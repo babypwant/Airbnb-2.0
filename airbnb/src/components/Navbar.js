@@ -32,7 +32,9 @@ const Navbar = () => {
                         <p>Rent House</p>
                         <BiWorld className='mx-4'/>
                     <div className='flex items-center gap-2 border px-4 py-2 
-                    rounded-full shadow-lg shadow-gray-250 font-bold hover:bg-[#be585b] duration-100 ease-out'>
+                    rounded-full shadow-lg shadow-gray-250 font-bold hover:bg-[#be585b] duration-100 ease-out
+                    hover:cursor-pointer
+                    '>
                         <p>Sign in</p>
                         <FaUserCircle className='text-[19px]'/>
                     </div> 
