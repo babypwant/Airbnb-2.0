@@ -15,7 +15,7 @@ const Rentals = () => {
     '>
         <div
         className='grid grid-cols-1 gap-4'>
-            {rentals.map((rental) => <Rental title={rental.title} image={rental.image} price={rental.price} id={rental.id} key={rental.id}/>)}
+            {rentals.map((rental) => <Rental title={rental.title} image={rental.image} price={rental.price} id={rental.id} rating={rental.rating} key={rental.id}/>)}
         </div>
     </div>
   )
