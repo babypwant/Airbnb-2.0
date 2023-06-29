@@ -1,7 +1,7 @@
 import {Link } from 'react-router-dom'
 
 
-export default function LoginPage() {
+export default function RegisterPage() {
   return (
     <div className="mt-4 grow flex items-center justify-around">
         <div className="mb-64">
@@ -16,7 +16,6 @@ export default function LoginPage() {
                 </div>
             </form>
         </div>
-
     </div>
   )
 }
