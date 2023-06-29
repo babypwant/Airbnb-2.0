@@ -1,9 +1,10 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
+const UserModel = require('./models/User')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken')
-const UserModel = require('./models/User')
+const cookieParser = require('cookie-parser')
 require('dotenv').config()
 
 const bcryptSalt = bcrypt.genSaltSync(6);
@@ -11,6 +12,7 @@ const jwtSecret = process.env.JWT_SECRET
 
 const app = express()
 app.use(express.json())
+app.use(cookieParser())
 
 app.use(cors({
     credentials: true,
@@ -50,15 +52,33 @@ app.post('/login', async (req, res) => {
     if(userDoc) {
         const passwordOk = bcrypt.compareSync(password, userDoc.password) 
         if (passwordOk) {
-            jwt.sign({email: userDoc.email, id:userDoc._id},jwtSecret, {}, (err, token) => {
+            jwt.sign({
+                email: userDoc.email, 
+                id:userDoc._id, 
+                }
+                ,jwtSecret, {}, (err, token) => {
+
                 if(err) throw err;
-                res.cookie('token', token).json('passok')
+                res.cookie('token', token).json(userDoc)
             })
         }else {
             res.status(422).json('pass not ok')
         }
     }else{
         res.json('not found')
+    }
+})
+
+app.get('/profile', (req,res) => {
+    const {token} = req.cookies;
+    if(token) {
+        jwt.verify(token, jwtSecret, {}, async (err, userData) => {
+            if(err)throw err;
+            const {name, email, id} = await UserModel.findById(userData.id)
+            res.json({name, email, id})
+        })
+    }else { 
+        res.json(null);
     }
 })
 
