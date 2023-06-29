@@ -2,10 +2,12 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken')
 const UserModel = require('./models/User')
 require('dotenv').config()
 
 const bcryptSalt = bcrypt.genSaltSync(6);
+const jwtSecret = process.env.JWT_SECRET
 
 const app = express()
 app.use(express.json())
@@ -40,6 +42,24 @@ app.post('/register', async (req,res) => {
         res.status(422).json(e)
     }
 
+})
+
+app.post('/login', async (req, res) => {
+    const {email, password} = req.body
+    const userDoc = await UserModel.findOne({email})
+    if(userDoc) {
+        const passwordOk = bcrypt.compareSync(password, userDoc.password) 
+        if (passwordOk) {
+            jwt.sign({email: userDoc.email, id:userDoc._id},jwtSecret, {}, (err, token) => {
+                if(err) throw err;
+                res.cookie('token', token).json('passok')
+            })
+        }else {
+            res.status(422).json('pass not ok')
+        }
+    }else{
+        res.json('not found')
+    }
 })
 
 app.listen(4000);
