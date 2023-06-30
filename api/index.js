@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 const imageDownloader = require('image-downloader')
+const multer = require('multer')
 require('dotenv').config()
 
 const bcryptSalt = bcrypt.genSaltSync(6);
@@ -14,6 +15,7 @@ const jwtSecret = process.env.JWT_SECRET
 const app = express()
 app.use(express.json())
 app.use(cookieParser())
+app.use('/uploads', express.static(__dirname + '/uploads'))
 
 app.use(cors({
     credentials: true,
@@ -96,6 +98,13 @@ app.post('/upload-by-link', async (req,res) => {
         dest: __dirname + '/uploads/' + newName,
     })
     res.json(newName)
+})
+
+const photoMiddleware = multer({dest:'uploads'})
+app.post('/upload',photoMiddleware.array('photos', 100), (req,res) => {
+    console.log(req.files)
+    res.json(req.files);
+
 })
 
 app.listen(4000);
