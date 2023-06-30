@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 const imageDownloader = require('image-downloader')
 const multer = require('multer')
+const fs = require('fs')
 require('dotenv').config()
 
 const bcryptSalt = bcrypt.genSaltSync(6);
@@ -102,9 +103,20 @@ app.post('/upload-by-link', async (req,res) => {
 
 const photoMiddleware = multer({dest:'uploads'})
 app.post('/upload',photoMiddleware.array('photos', 100), (req,res) => {
-    console.log(req.files)
-    res.json(req.files);
-
+    const uploadedFiles = [];
+    for(let i = 0; i< req.files.length; i++) {
+        console.log(req.files[i])
+        const {path, originalname} = req.files[i]
+        const parts = originalname.split('.');
+        const ext = parts[parts.length - 1]
+        console.log('ext', ext)
+        const newPath = path + '.' + ext
+        fs.renameSync(path, newPath)
+        uploadedFiles.push(newPath.replace('uploads/', ''));
+        
+    }
+    console.log('uploaded files:', uploadedFiles)
+    res.json(uploadedFiles);
 })
 
 app.listen(4000);
