@@ -20,7 +20,7 @@ axios.defaults.baseURL = 'https://airbnb-2-0-flame.vercel.app';
 
 axios.defaults.withCredentials = true;
 
-console.log(process.env.VITE_API_BASE_URL)
+console.log(axios.defaults.baseURL)
 
 function App() {
   return (
