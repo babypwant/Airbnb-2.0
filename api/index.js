@@ -12,10 +12,11 @@ const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 const multer = require('multer');
 const fs = require('fs');
 const mime = require('mime-types');
+require('dotenv').config();
+
 
 mongoose.set('strictQuery', false);
 
-require('dotenv').config();
 const app = express();
 
 const bcryptSalt = bcrypt.genSaltSync(10);
@@ -25,10 +26,12 @@ const bucket = process.env.S3_BUCKET_NAME;
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname+'/uploads'));
-app.use(cors({
-  credentials: true,
-  origin: process.env.ORIGIN,
-}));
+// app.use(cors({
+//   credentials: true,
+//   origin: process.env.ORIGIN,
+// }));
+app.use(cors());
+
 
 async function uploadToS3(path, originalFilename, mimetype) {
   const client = new S3Client({
