@@ -2,6 +2,8 @@ import {Link, Navigate} from "react-router-dom";
 import {useContext, useState} from "react";
 import axios from "axios";
 import {UserContext} from "../UserContext.jsx";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function LoginPage() {
@@ -12,24 +14,35 @@ export default function LoginPage() {
   async function handleLoginSubmit(ev) {
     ev.preventDefault();
     try {
-      const {data} = await axios.post('/login', {email,password});
-      setUser(data);
-      setRedirect(true);
+      const { data } = await axios.post('/login', { email, password });
+      if (data !== 'not found' && data !== 'pass not ok') {
+        setUser(data);
+        setRedirect(true);
+        toast("Oh yeah! You're logged in!");
+      } else {
+        toast("Invalid email or password 😅");
+      }
     } catch (e) {
-      alert('Login failed');
+      toast("Login failed");
     }
   }
-
+  
   async function handleDemoLogin(ev) {
     ev.preventDefault();
     try {
       const { data } = await axios.post('/api/demo');
-      setUser(data);
-      setRedirect(true);
+      if (data !== 'not found' && data !== 'pass not ok') {
+        setUser(data);
+        setRedirect(true);
+        toast("Oh yeah! You're logged in!");
+      } else {
+        toast("Demo login failed");
+      }
     } catch (e) {
-      alert('Demo login failed');
+      toast("Demo login failed");
     }
   }
+  
 
   if (redirect) {
     return <Navigate to={'/'} />
@@ -56,6 +69,7 @@ export default function LoginPage() {
             Don't have an account yet? <Link className="underline text-black" to={'/register'}>Register now</Link>
           </div>
         </form>
+        <ToastContainer />
       </div>
     </div>
   );
