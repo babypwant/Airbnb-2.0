@@ -112,7 +112,6 @@ app.post('/login', async (req,res) => {
 });
 
 app.post('/api/demo', async (req,res) => {
-  console.log('in here /login')
 
   mongoose.connect(process.env.MONGODB_URI);
   const userDoc = await User.findOne({ email: 'demo@gmail.com' });
