@@ -19,6 +19,8 @@ axios.defaults.baseURL = process.env.VITE_API_BASE_URL;
 
 axios.defaults.withCredentials = true;
 
+console.log(process.env.VITE_API_BASE_URL)
+
 function App() {
   return (
     <UserContextProvider>
