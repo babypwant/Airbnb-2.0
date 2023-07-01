@@ -18,3 +18,8 @@ button.primary{
     background-color: #F5385D;
     @apply bg-primary p-2 w-full text-white rounded-2xl;
 }
+button.secondary{
+    margin-top: 6px;
+    background-color: #000000;
+    @apply p-2 w-full text-white rounded-2xl;
+}

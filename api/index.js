@@ -26,11 +26,15 @@ const bucket = process.env.S3_BUCKET_NAME;
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname+'/uploads'));
-// app.use(cors({
-//   credentials: true,
-//   origin: process.env.ORIGIN,
-// }));
-app.use(cors());
+
+if(process.env.ENVIRONMENT === 'development'){
+  app.use(cors({
+    credentials: true,
+    origin: process.env.ORIGIN,
+  }));
+}else{
+  app.use(cors());
+}
 
 
 async function uploadToS3(path, originalFilename, mimetype) {
@@ -86,7 +90,6 @@ app.post('/register', async (req,res) => {
 });
 
 app.post('/login', async (req,res) => {
-  console.log('in here /login')
   mongoose.connect(process.env.MONGODB_URI);
   const {email,password} = req.body;
   const userDoc = await User.findOne({email});
@@ -108,13 +111,13 @@ app.post('/login', async (req,res) => {
   }
 });
 
-app.post('/api/login', async (req,res) => {
-  console.log('in here / api/login')
+app.post('/api/demo', async (req,res) => {
+  console.log('in here /login')
+
   mongoose.connect(process.env.MONGODB_URI);
-  const {email,password} = req.body;
-  const userDoc = await User.findOne({email});
+  const userDoc = await User.findOne({ email: 'demo@gmail.com' });
   if (userDoc) {
-    const passOk = bcrypt.compareSync(password, userDoc.password);
+    const passOk = bcrypt.compareSync('demo', userDoc.password);
     if (passOk) {
       jwt.sign({
         email:userDoc.email,
