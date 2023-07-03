@@ -1,3 +1,4 @@
+import React from 'react';
 import PhotosUploader from "../PhotosUploader.jsx";
 import Perks from "../Perks.jsx";
 import {useEffect, useState} from "react";
@@ -13,8 +14,8 @@ export default function PlacesFormPage() {
   const [description,setDescription] = useState('');
   const [perks,setPerks] = useState([]);
   const [extraInfo,setExtraInfo] = useState('');
-  const [checkIn,setCheckIn] = useState('');
-  const [checkOut,setCheckOut] = useState('');
+  const [checkIn,setCheckIn] = useState('10:00 AM');
+  const [checkOut, setCheckOut] = useState('2:00 PM');
   const [maxGuests,setMaxGuests] = useState(1);
   const [price,setPrice] = useState(100);
   const [redirect,setRedirect] = useState(false);
@@ -84,35 +85,61 @@ export default function PlacesFormPage() {
     <div>
       <AccountNav />
       <form onSubmit={savePlace}>
-        {preInput('Title', 'Title for your place. should be short and catchy as in advertisement')}
-        <input type="text" value={title} onChange={ev => setTitle(ev.target.value)} placeholder="title, for example: My lovely apt"/>
-        {preInput('Address', 'Address to this place')}
+        {preInput('Title', 'Give your place a name ! ')}
+        <input type="text" value={title} onChange={ev => setTitle(ev.target.value)} placeholder="My Lovely Apartment..."/>
+        {preInput('Address', 'Where is your place located ?')}
         <input type="text" value={address} onChange={ev => setAddress(ev.target.value)}placeholder="address"/>
-        {preInput('Photos','more = better')}
+        {preInput('Photos','Show off your decor ! more is better')}
         <PhotosUploader addedPhotos={addedPhotos} onChange={setAddedPhotos} />
-        {preInput('Description','description of the place')}
+        {preInput('Description','What vibes does your place give off?')}
         <textarea value={description} onChange={ev => setDescription(ev.target.value)} />
-        {preInput('Perks','select all the perks of your place')}
+        {preInput('Amenities','Does your space offer any of these?')}
         <div className="grid mt-2 gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
           <Perks selected={perks} onChange={setPerks} />
         </div>
-        {preInput('Extra info','house rules, etc')}
+        {preInput('Extra info','Anything else your guests should know? Gate code? Private entrance?')}
         <textarea value={extraInfo} onChange={ev => setExtraInfo(ev.target.value)} />
-        {preInput('Check in&out times','add check in and out times, remember to have some time window for cleaning the room between guests')}
+        {preInput('Check In/Out','When should your guests arrive and leave?')}
         <div className="grid gap-2 grid-cols-2 md:grid-cols-4">
           <div>
             <h3 className="mt-2 -mb-1">Check in time</h3>
-            <input type="text"
-                   value={checkIn}
-                   onChange={ev => setCheckIn(ev.target.value)}
-                   placeholder="14"/>
+              <select
+              value={checkIn}
+              onChange={ev => setCheckIn(ev.target.value)}
+            >
+              <option value="10:00 AM">10:00 AM</option>
+              {Array.from({ length: 12 }, (_, i) => {
+                const hour = i + 1;
+                const amTime = `${hour}:00 AM`;
+                const pmTime = `${hour}:00 PM`;
+                return (
+                  <React.Fragment key={hour}>
+                    <option value={amTime}>{amTime}</option>
+                    <option value={pmTime}>{pmTime}</option>
+                  </React.Fragment>
+                );
+              })}
+            </select>
           </div>
           <div>
             <h3 className="mt-2 -mb-1">Check out time</h3>
-            <input type="text"
-                   value={checkOut}
-                   onChange={ev => setCheckOut(ev.target.value)}
-                   placeholder="11" />
+                <select
+                value={checkOut}
+                onChange={ev => setCheckOut(ev.target.value)}
+              >
+                <option value="2:00 PM">2:00 PM</option>
+                {Array.from({ length: 12 }, (_, i) => {
+                  const hour = i + 1;
+                  const amTime = `${hour}:00 AM`;
+                  const pmTime = `${hour}:00 PM`;
+                  return (
+                    <React.Fragment key={hour}>
+                      <option value={amTime}>{amTime}</option>
+                      <option value={pmTime}>{pmTime}</option>
+                    </React.Fragment>
+                  );
+                })}
+              </select>
           </div>
           <div>
             <h3 className="mt-2 -mb-1">Max number of guests</h3>
