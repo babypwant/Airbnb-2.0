@@ -1,1 +1,44 @@
-{"_id":{"$oid":"649fba8d658b5102664b2d9d"},"owner":{"$oid":"649fb8cb80d8641bf4cfabf9"},"title":"Bellacollina Farms ~ Beautiful Briones Retreat","address":"Martinez, California, United States","photos":["https://airbnbclone-aa.s3.amazonaws.com/1688189505618.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189505794.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189506008.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189506160.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189506252.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189506348.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189506451.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189506516.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189506599.webp"],"description":"This new, expansive and beautiful farm setting retreat has relaxing interiors and fabulous grounds to explore and enjoy. In a world of its own, escape the hustle and bustle for the rural countryside, centrally located in the hidden valley of Briones, CA tucked away between Pleasant Hill/ Walnut Creek, Lafayette, Berkeley and less than 19 miles due east of downtown San Francisco. Close access to freeways and BART","perks":["wifi","tv","entrance","parking"],"extraInfo":"A common area with wifi that’s well-suited for working.","checkIn":{"$numberInt":"14"},"checkOut":{"$numberInt":"11"},"maxGuests":{"$numberInt":"4"},"price":{"$numberInt":"125"},"__v":{"$numberInt":"0"}}
+{
+    "_id":{
+       "$oid":"649fba8d658b5102664b2d9d"
+    },
+    "owner":{
+       "$oid":"649fb8cb80d8641bf4cfabf9"
+    },
+    "title":"Bellacollina Farms ~ Beautiful Briones Retreat",
+    "address":"Martinez, California, United States",
+    "photos":[
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189505618.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189505794.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189506008.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189506160.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189506252.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189506348.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189506451.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189506516.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189506599.webp"
+    ],
+    "description":"This new, expansive and beautiful farm setting retreat has relaxing interiors and fabulous grounds to explore and enjoy. In a world of its own, escape the hustle and bustle for the rural countryside, centrally located in the hidden valley of Briones, CA tucked away between Pleasant Hill/ Walnut Creek, Lafayette, Berkeley and less than 19 miles due east of downtown San Francisco. Close access to freeways and BART",
+    "perks":[
+       "wifi",
+       "tv",
+       "entrance",
+       "parking"
+    ],
+    "extraInfo":"A common area with wifi that’s well-suited for working.",
+    "checkIn":{
+       "$numberInt":"14"
+    },
+    "checkOut":{
+       "$numberInt":"11"
+    },
+    "maxGuests":{
+       "$numberInt":"4"
+    },
+    "price":{
+       "$numberInt":"125"
+    },
+    "__v":{
+       "$numberInt":"0"
+    }
+ }

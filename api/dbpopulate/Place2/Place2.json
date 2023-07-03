@@ -1,1 +1,46 @@
-{"_id":{"$oid":"649fc5d50de98aba6a935cbe"},"owner":{"$oid":"649fb8cb80d8641bf4cfabf9"},"title":"Luxurious 5BR Hot Tub Oasis w/Views Pool Table!","address":"  Pacifica, California, United States","photos":["https://airbnbclone-aa.s3.amazonaws.com/1688192406542.webp","https://airbnbclone-aa.s3.amazonaws.com/1688192406668.webp","https://airbnbclone-aa.s3.amazonaws.com/1688192406750.webp","https://airbnbclone-aa.s3.amazonaws.com/1688192407099.webp","https://airbnbclone-aa.s3.amazonaws.com/1688192407216.webp","https://airbnbclone-aa.s3.amazonaws.com/1688192407278.webp","https://airbnbclone-aa.s3.amazonaws.com/1688192407354.webp","https://airbnbclone-aa.s3.amazonaws.com/1688192407459.webp","https://airbnbclone-aa.s3.amazonaws.com/1688192407530.webp","https://airbnbclone-aa.s3.amazonaws.com/1688192407589.webp"],"description":"This home offers a peaceful yet fun environment to stay at with your friends, family, & or coworkers! It offers a awesome hot tub w/canyon views which is on a gorgeous deck that is lit with shimmering lights. The interior is spacious w/a great room where you can enjoy a space where everyone can watch tv, dine, and cook together. The location is scenic and peaceful yet conveniently located within 20 min to SFO airport and 25 min to downtown San Francisco. This home house 16 comfortably!","perks":["wifi","parking","tv","pets","entrance"],"extraInfo":"Free Pool table and spa !","checkIn":{"$numberInt":"10"},"checkOut":{"$numberInt":"4"},"maxGuests":{"$numberInt":"8"},"price":{"$numberInt":"100"},"__v":{"$numberInt":"0"}}
+{
+    "_id":{
+       "$oid":"649fc5d50de98aba6a935cbe"
+    },
+    "owner":{
+       "$oid":"649fb8cb80d8641bf4cfabf9"
+    },
+    "title":"Luxurious 5BR Hot Tub Oasis w/Views Pool Table!",
+    "address":"Pacifica, California, United States",
+    "photos":[
+       "https://airbnbclone-aa.s3.amazonaws.com/1688192406542.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688192406668.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688192406750.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688192407099.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688192407216.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688192407278.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688192407354.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688192407459.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688192407530.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688192407589.webp"
+    ],
+    "description":"This home offers a peaceful yet fun environment to stay at with your friends, family, & or coworkers! It offers a awesome hot tub w/canyon views which is on a gorgeous deck that is lit with shimmering lights. The interior is spacious w/a great room where you can enjoy a space where everyone can watch tv, dine, and cook together. The location is scenic and peaceful yet conveniently located within 20 min to SFO airport and 25 min to downtown San Francisco. This home house 16 comfortably!",
+    "perks":[
+       "wifi",
+       "parking",
+       "tv",
+       "pets",
+       "entrance"
+    ],
+    "extraInfo":"Free Pool table and spa !",
+    "checkIn":{
+       "$numberInt":"10"
+    },
+    "checkOut":{
+       "$numberInt":"4"
+    },
+    "maxGuests":{
+       "$numberInt":"8"
+    },
+    "price":{
+       "$numberInt":"100"
+    },
+    "__v":{
+       "$numberInt":"0"
+    }
+ }

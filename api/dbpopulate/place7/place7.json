@@ -1,1 +1,45 @@
-{"_id":{"$oid":"649fbc26658b5102664b2da4"},"owner":{"$oid":"649fb8cb80d8641bf4cfabf9"},"title":"Oceanfront Bolinas hide-a-way","address":"Bolinas, California, United States","photos":["https://airbnbclone-aa.s3.amazonaws.com/1688189925063.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189925250.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189925310.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189925401.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189925501.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189925566.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189925653.webp","https://airbnbclone-aa.s3.amazonaws.com/1688189925713.webp"],"description":"Kick back and relax in this private 4-bedroom home situated right on the ocean. Recently remodeled with an open layout and high end finishes. You’ll enjoy incredible 180 degree views of the Pacific Ocean, Mt Tam, and San Francisco.\n\nFor those that need to work during their stay, there is a 300 mb/s direct fiber connection and dedicated workspace.","perks":["wifi","tv","parking","entrance","radio","pets"],"extraInfo":"There is ample street parking in front of the house. The neighborhood is highly walkable. Downtown Bolinas is a 20 minute walk away or quick bike / drive.","checkIn":{"$numberInt":"8"},"checkOut":{"$numberInt":"12"},"maxGuests":{"$numberInt":"6"},"price":{"$numberInt":"110"},"__v":{"$numberInt":"0"}}
+{
+    "_id":{
+       "$oid":"649fbc26658b5102664b2da4"
+    },
+    "owner":{
+       "$oid":"649fb8cb80d8641bf4cfabf9"
+    },
+    "title":"Oceanfront Bolinas hide-a-way",
+    "address":"Bolinas, California, United States",
+    "photos":[
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189925063.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189925250.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189925310.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189925401.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189925501.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189925566.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189925653.webp",
+       "https://airbnbclone-aa.s3.amazonaws.com/1688189925713.webp"
+    ],
+    "description":"Kick back and relax in this private 4-bedroom home situated right on the ocean. Recently remodeled with an open layout and high end finishes. You’ll enjoy incredible 180 degree views of the Pacific Ocean, Mt Tam, and San Francisco.\n\nFor those that need to work during their stay, there is a 300 mb/s direct fiber connection and dedicated workspace.",
+    "perks":[
+       "wifi",
+       "tv",
+       "parking",
+       "entrance",
+       "radio",
+       "pets"
+    ],
+    "extraInfo":"There is ample street parking in front of the house. The neighborhood is highly walkable. Downtown Bolinas is a 20 minute walk away or quick bike / drive.",
+    "checkIn":{
+       "$numberInt":"8"
+    },
+    "checkOut":{
+       "$numberInt":"12"
+    },
+    "maxGuests":{
+       "$numberInt":"6"
+    },
+    "price":{
+       "$numberInt":"110"
+    },
+    "__v":{
+       "$numberInt":"0"
+    }
+ }
