@@ -14,9 +14,9 @@ import BookingsPage from "./pages/BookingsPage";
 import BookingPage from "./pages/BookingPage";
 // require('dotenv').config();
 
-// axios.defaults.baseURL = 'https://airbnb-2-0-flame.vercel.app';
+axios.defaults.baseURL = 'https://airbnb-2-0-flame.vercel.app';
 
-axios.defaults.baseURL = 'http://127.0.0.1:4000';
+// axios.defaults.baseURL = 'http://127.0.0.1:4000';
 
 axios.defaults.withCredentials = true;
 
