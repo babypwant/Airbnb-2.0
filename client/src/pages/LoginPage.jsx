@@ -1,10 +1,10 @@
 import {Link, Navigate} from "react-router-dom";
 import {useContext, useState} from "react";
-import axios from "axios";
 import {UserContext} from "../UserContext.jsx";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import axios from "axios";
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -13,18 +13,22 @@ export default function LoginPage() {
   const {setUser} = useContext(UserContext);
   async function handleLoginSubmit(ev) {
     ev.preventDefault();
-    try {
-      const { data } = await axios.post('/login', { email, password });
-      if (data !== 'not found' && data !== 'pass not ok') {
-        setUser(data);
-        setRedirect(true);
-        toast("Oh yeah! You're logged in!");
-      } else {
-        toast("Invalid email or password 😅");
+    if(email && password) {
+      try {
+        const { data } = await axios.post('/login', { email, password });
+        if (data !== 'not found' && data !== 'pass not ok') {
+          setUser(data);
+          setRedirect(true);
+          toast("Oh yeah! You're logged in!");
+        } else {
+          toast("Invalid email or password 😅");
+        }
+      } catch (e) {
+        toast("Login failed");
       }
-    } catch (e) {
-      toast("Login failed");
-    }
+    }else {
+      toast("Uh Oh 😅! One or more fields are missing")
+      }
   }
   
   async function handleDemoLogin(ev) {

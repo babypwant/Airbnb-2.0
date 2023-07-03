@@ -1,5 +1,8 @@
 import {Link} from "react-router-dom";
 import {useState} from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import axios from "axios";
 
 export default function RegisterPage() {
@@ -8,15 +11,21 @@ export default function RegisterPage() {
   const [password,setPassword] = useState('');
   async function registerUser(ev) {
     ev.preventDefault();
-    try {
-      await axios.post('/register', {
-        name,
-        email,
-        password,
-      });
-      alert('Registration successful. Now you can log in');
-    } catch (e) {
-      alert('Registration failed. Please try again later');
+
+    if (name && email && password) {
+      try {
+        await axios.post('/register', {
+          name,
+          email,
+          password,
+        });
+        
+        alert('Registration successful. Now you can log in');
+      } catch (e) {
+        toast("Uh Oh 😅! Something went wrong");
+      }
+    }else {
+      toast("Uh Oh 😅! One or more fields are missing");
     }
   }
   return (
@@ -41,6 +50,8 @@ export default function RegisterPage() {
             Already a member? <Link className="underline text-black" to={'/login'}>Login</Link>
           </div>
         </form>
+        <ToastContainer />
+
       </div>
     </div>
   );
